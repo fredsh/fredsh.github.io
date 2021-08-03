@@ -22,6 +22,7 @@
 <link rel=stylesheet href=/css/layouts/single.css>
 <link rel=stylesheet href=/css/navigators/sidebar.css>
 <link rel=stylesheet href=/css/style.css>
+<link rel=stylesheet href=/my_css/cookie.css>
 </head>
 <body data-spy=scroll data-target=#TableOfContents data-offset=80>
 <div class="container-fluid bg-dimmed wrapper">
@@ -31,7 +32,7 @@
 <span class=navbar-toggler-icon></span>
 </button>
 <a class=navbar-brand href=/>
-Fred's Blog</a>
+fred.sh</a>
 <button class="navbar-toggler navbar-light" id=toc-toggler type=button onclick=toggleTOC()>
 <span class=navbar-toggler-icon></span>
 </button>
@@ -75,12 +76,6 @@ Fred's Blog</a>
 <div class=post-content id=post-content>
 <p>First post coming soon.</p>
 </div>
-<div class=btn-improve-page>
-<a href=https://github.com/fredsh/fredsh-site/edit//content/posts/firstPost/index.md title="Improve this page" target=_blank rel=noopener>
-<i class="fas fa-code-branch"></i>
-Improve this page
-</a>
-</div>
 <hr>
 <div class="row next-prev-navigator">
 </div>
@@ -100,6 +95,20 @@ Improve this page
 </div>
 </section>
 </div>
+<div class=cookie-container>
+<div class=cookie-anchor>^</div>
+<p class=cookie-notice>
+My site uses cookies to improve your experience. To find out more or, read my
+<a href=/privacy/>privacy statement</a> and <a href=/cookies/>cookie policy</a>.
+</p>
+<button class=cookie-btn-ok>
+Got it
+</button>
+<button class=cookie-btn-no>
+No cookies please
+</button>
+</div>
+<script src=/my_js/cookie.js></script>
 <footer class="container-fluid text-center align-content-center footer pb-2">
 <div class="container pt-5">
 <div class="row text-left">
@@ -111,6 +120,12 @@ Improve this page
 </li>
 <li class=nav-item>
 <a class=smooth-scroll href=/#skills>Skills</a>
+</li>
+<li class=nav-item>
+<a href=/privacy>Privacy statement</a>
+</li>
+<li class=nav-item>
+<a href=/privacy>Cookie policy</a>
 </li>
 </ul>
 </div>
