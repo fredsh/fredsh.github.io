@@ -11,12 +11,13 @@
 <link rel=stylesheet href=/css/flag-icon.min.css>
 <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel=stylesheet>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css>
+<script>function deleteCookies(){for(var c=document.cookie.split(";"),a=0,b,d,e;a<c.length;a++)b=c[a],d=b.indexOf("="),e=d>-1?b.substr(0,d):b,document.cookie=e+"=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;domain=",document.cookie=e+"=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;domain="+location.hostname.replace(/^www\./i,"")}function disableCookies(){deleteCookies(),document.__defineGetter__?(document.__defineGetter__("cookie",function(){return''}),document.__defineSetter__("cookie",function(){return!0})):Object.defineProperty(document,'cookie',{get:function(){return''},set:function(){return!0}})}function enableCookies(){document.__defineGetter__?(document.__defineGetter__("cookie",function(){return document.cookie}),document.__defineSetter__("cookie",function(a){document.cookie=a})):Object.defineProperty(document,'cookie',{get:function(){return document.cookie},set:function(a){document.cookie=a}})}function isCookieApproved(){return localStorage.getItem("cookieBannerApproved")==='true'}isCookieApproved()||(console.log('auto disable'),deleteCookies(),disableCookies()),window.isCookieApproved=isCookieApproved,window.disableCookies=disableCookies,window.enableCookies=enableCookies,window.deleteCookies=deleteCookies</script>
 <meta property="og:title" content="Cookie policy">
 <meta property="og:description" content="Work in progress.
 For a better understanding of what is a cookie, please head over there.
 To view or delete cookies, please refer to your web browser instructions.
 This site uses Google Analytics for traffic analysis and GraphComment for handling comments in blog posts. These services use cookies to identify users.
-You may opt-out of cookies on this website through the cookie banner. Please note that by doing so, comments feature will be disabled.">
+You may opt-out of cookies on this website through the cookie banner. Please note that by doing so, comments feature may be disabled completely or not working as expected.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://fredsh.github.io/cookie-policy/"><meta property="article:section" content>
 <meta property="article:published_time" content="2021-08-11T22:36:06+02:00">
@@ -58,7 +59,7 @@ fred.sh</a>
 <ul class=tree id=tree>
 <li id=list-heading><a href=/posts data-filter=all>Posts</a></li>
 <div class=subtree>
-<li><a href=/posts/firstpost/ title=Introduction>Introduction</a></li>
+<li><a href=/posts/firstpost/ title="First post">First post</a></li>
 </div>
 </ul>
 </div>
@@ -84,7 +85,7 @@ fred.sh</a>
 <p>For a better understanding of what is a cookie, please head <a href=https://www.allaboutcookies.org/cookies/ target=_blank>over there</a>.</p>
 <p>To view or delete cookies, please refer to your web browser instructions.</p>
 <p>This site uses <a href=https://analytics.google.com/analytics/web/provision/#/provision target=_blank>Google Analytics</a> for traffic analysis and <a href=https://graphcomment.com/en/ target=_blank>GraphComment</a> for handling comments in blog posts. These services use cookies to identify users.</p>
-<p>You may opt-out of cookies on this website through the cookie banner. Please note that by doing so, comments feature will be disabled.</p>
+<p>You may opt-out of cookies on this website through the cookie banner. Please note that by doing so, comments feature may be disabled completely or not working as expected.</p>
 </div>
 <hr>
 <div class="row next-prev-navigator">
@@ -118,7 +119,7 @@ Got it
 No cookies please
 </button>
 </div>
-<script src=/my_js/cookie.js></script>
+<script src=/my_js/cookieNotice.js></script>
 <footer class="container-fluid text-center align-content-center footer pb-2">
 <div class="container pt-5">
 <div class="row text-left">

@@ -11,6 +11,7 @@
 <link rel=stylesheet href=/css/flag-icon.min.css>
 <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel=stylesheet>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css>
+<script>function deleteCookies(){for(var c=document.cookie.split(";"),a=0,b,d,e;a<c.length;a++)b=c[a],d=b.indexOf("="),e=d>-1?b.substr(0,d):b,document.cookie=e+"=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;domain=",document.cookie=e+"=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;domain="+location.hostname.replace(/^www\./i,"")}function disableCookies(){deleteCookies(),document.__defineGetter__?(document.__defineGetter__("cookie",function(){return''}),document.__defineSetter__("cookie",function(){return!0})):Object.defineProperty(document,'cookie',{get:function(){return''},set:function(){return!0}})}function enableCookies(){document.__defineGetter__?(document.__defineGetter__("cookie",function(){return document.cookie}),document.__defineSetter__("cookie",function(a){document.cookie=a})):Object.defineProperty(document,'cookie',{get:function(){return document.cookie},set:function(a){document.cookie=a}})}function isCookieApproved(){return localStorage.getItem("cookieBannerApproved")==='true'}isCookieApproved()||(console.log('auto disable'),deleteCookies(),disableCookies()),window.isCookieApproved=isCookieApproved,window.disableCookies=disableCookies,window.enableCookies=enableCookies,window.deleteCookies=deleteCookies</script>
 <meta property="og:title" content="Tags">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
@@ -50,7 +51,7 @@ fred.sh</a>
 <ul class=tree id=tree>
 <li id=list-heading><a href=/tags data-filter=all></a></li>
 <div class=subtree>
-<li><a href=/posts/firstpost/ title=Introduction>Introduction</a></li>
+<li><a href=/posts/firstpost/ title="First post">First post</a></li>
 </div>
 </ul>
 </div>
@@ -79,7 +80,7 @@ Got it
 No cookies please
 </button>
 </div>
-<script src=/my_js/cookie.js></script>
+<script src=/my_js/cookieNotice.js></script>
 <footer class="container-fluid text-center align-content-center footer pb-2">
 <div class="container pt-5">
 <div class="row text-left">
