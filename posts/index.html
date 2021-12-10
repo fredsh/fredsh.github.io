@@ -11,7 +11,7 @@
 <link rel=stylesheet href=/css/flag-icon.min.css>
 <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel=stylesheet>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css>
-<script>function deleteCookies(){for(var c=document.cookie.split(";"),a=0,b,d,e;a<c.length;a++)b=c[a],d=b.indexOf("="),e=d>-1?b.substr(0,d):b,document.cookie=e+"=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;domain=",document.cookie=e+"=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;domain="+location.hostname.replace(/^www\./i,"")}function disableCookies(){deleteCookies(),document.__defineGetter__?(document.__defineGetter__("cookie",function(){return''}),document.__defineSetter__("cookie",function(){return!0})):Object.defineProperty(document,'cookie',{get:function(){return''},set:function(){return!0}})}function enableCookies(){document.__defineGetter__?(document.__defineGetter__("cookie",function(){return document.cookie}),document.__defineSetter__("cookie",function(a){document.cookie=a})):Object.defineProperty(document,'cookie',{get:function(){return document.cookie},set:function(a){document.cookie=a}})}function isCookieApproved(){return localStorage.getItem("cookieBannerApproved")==='true'}isCookieApproved()||(console.log('auto disable'),deleteCookies(),disableCookies()),window.isCookieApproved=isCookieApproved,window.disableCookies=disableCookies,window.enableCookies=enableCookies,window.deleteCookies=deleteCookies</script>
+<script>function deleteCookies(){for(var c=document.cookie.split(";"),a=0,b,d,e;a<c.length;a++)b=c[a],d=b.indexOf("="),e=d>-1?b.substr(0,d):b,document.cookie=e+"=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;domain=",document.cookie=e+"=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;domain="+location.hostname.replace(/^www\./i,"")}function disableCookies(){deleteCookies(),document.__defineGetter__?(document.__defineGetter__("cookie",function(){return''}),document.__defineSetter__("cookie",function(){return!0})):Object.defineProperty(document,'cookie',{get:function(){return''},set:function(){return!0}})}function isCookieApproved(){return localStorage.getItem("cookieBannerApproved")==='true'}isCookieApproved()||(deleteCookies(),disableCookies()),window.isCookieApproved=isCookieApproved,window.disableCookies=disableCookies,window.deleteCookies=deleteCookies</script>
 <meta property="og:title" content="Posts">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
@@ -51,7 +51,8 @@ fred.sh</a>
 <ul class=tree id=tree>
 <li id=list-heading><a href=/posts data-filter=all>Posts</a></li>
 <div class=subtree>
-<li><a href=/posts/firstpost/ title="First post">First post</a></li>
+<li><a href=/posts/starting-tech-blog/ title=Welcome>Welcome</a></li>
+<li><a href=/posts/safely-manage-cookie-consent/ title="How to cookie consent?">How to cookie consent?</a></li>
 </div>
 </ul>
 </div>
@@ -62,18 +63,38 @@ fred.sh</a>
 <div class="content container-fluid" id=content>
 <div class="container-fluid post-card-holder" id=post-card-holder>
 <div class=post-card>
-<a href=/posts/firstpost/ class=post-card-link>
+<a href=/posts/safely-manage-cookie-consent/ class=post-card-link>
 <div class=card>
 <div class=card-head>
-<img class=card-img-top src=/images/default-hero.jpg alt="Hero Image">
+<img class=card-img-top src=/posts/safely-manage-cookie-consent/cookie.jpg alt="Hero Image">
 </div>
 <div class=card-body>
-<h5 class=card-title>First post</h5>
-<p class="card-text post-summary">Starting a tech blog Coming soon&mldr;</p>
+<h5 class=card-title>How to safely manage cookie consent?</h5>
+<p class="card-text post-summary">Photo by Vyshnavi Bisani on Unsplash Disclaimer I am no legal expert, so what follows is the result of my researches and my understanding of privacy regulations. I highly recommend you to verify if my approach works for you or not.
+This post is not about explaining what is GDPR or all its implications. Here, I will describe what I implemented on my Hugo site as a solution to comply with regulations.</p>
 </div>
 <div class=card-footer>
-<span class=float-left>June 8, 2020</span>
-<a href=/posts/firstpost/ class="float-right btn btn-outline-info btn-sm">Read</a>
+<span class=float-left>December 8, 2021</span>
+<a href=/posts/safely-manage-cookie-consent/ class="float-right btn btn-outline-info btn-sm">Read</a>
+</div>
+</div>
+</a>
+</div>
+<div class=post-card>
+<a href=/posts/starting-tech-blog/ class=post-card-link>
+<div class=card>
+<div class=card-head>
+<img class=card-img-top src=/posts/starting-tech-blog/typewriter.jpg alt="Hero Image">
+</div>
+<div class=card-body>
+<h5 class=card-title>Starting a tech blog</h5>
+<p class="card-text post-summary">Photo by RetroSupply on Unsplash About me I am Fred, a full-stack developer and architect. While I am most confortable with dotnet and react, I am a tech enthusiast and love trying out various languages, frameworks and more&mldr;
+I do not believe in one solution fits all projects but that there are many options out there and the right choice depends on the answers to various questions:
+What problem are you trying to solve?</p>
+</div>
+<div class=card-footer>
+<span class=float-left>December 4, 2021</span>
+<a href=/posts/starting-tech-blog/ class="float-right btn btn-outline-info btn-sm">Read</a>
 </div>
 </div>
 </a>

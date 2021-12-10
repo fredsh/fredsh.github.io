@@ -11,7 +11,7 @@
 <link rel=stylesheet href=/css/flag-icon.min.css>
 <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel=stylesheet>
 <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css>
-<script>function deleteCookies(){for(var c=document.cookie.split(";"),a=0,b,d,e;a<c.length;a++)b=c[a],d=b.indexOf("="),e=d>-1?b.substr(0,d):b,document.cookie=e+"=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;domain=",document.cookie=e+"=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;domain="+location.hostname.replace(/^www\./i,"")}function disableCookies(){deleteCookies(),document.__defineGetter__?(document.__defineGetter__("cookie",function(){return''}),document.__defineSetter__("cookie",function(){return!0})):Object.defineProperty(document,'cookie',{get:function(){return''},set:function(){return!0}})}function enableCookies(){document.__defineGetter__?(document.__defineGetter__("cookie",function(){return document.cookie}),document.__defineSetter__("cookie",function(a){document.cookie=a})):Object.defineProperty(document,'cookie',{get:function(){return document.cookie},set:function(a){document.cookie=a}})}function isCookieApproved(){return localStorage.getItem("cookieBannerApproved")==='true'}isCookieApproved()||(console.log('auto disable'),deleteCookies(),disableCookies()),window.isCookieApproved=isCookieApproved,window.disableCookies=disableCookies,window.enableCookies=enableCookies,window.deleteCookies=deleteCookies</script>
+<script>function deleteCookies(){for(var c=document.cookie.split(";"),a=0,b,d,e;a<c.length;a++)b=c[a],d=b.indexOf("="),e=d>-1?b.substr(0,d):b,document.cookie=e+"=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;domain=",document.cookie=e+"=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;domain="+location.hostname.replace(/^www\./i,"")}function disableCookies(){deleteCookies(),document.__defineGetter__?(document.__defineGetter__("cookie",function(){return''}),document.__defineSetter__("cookie",function(){return!0})):Object.defineProperty(document,'cookie',{get:function(){return''},set:function(){return!0}})}function isCookieApproved(){return localStorage.getItem("cookieBannerApproved")==='true'}isCookieApproved()||(deleteCookies(),disableCookies()),window.isCookieApproved=isCookieApproved,window.disableCookies=disableCookies,window.deleteCookies=deleteCookies</script>
 <meta property="og:title" content="Notes">
 <meta property="og:description" content>
 <meta property="og:type" content="website">
@@ -67,12 +67,12 @@ fred.sh</a>
 <div class=card>
 <div class=card-body><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-md data-lang=md>[x] site
 [x] deploy with gh actions
-[ ] write first post
+[x] write first post
 [x] add cookie banner
 [ ] write cookie policy
 [x] write privacy statement
 [x] add google analytics
-[ ] add comments on posts
+[x] add comments on posts
 </code></pre></div></div>
 </div>
 </div>
@@ -81,13 +81,13 @@ fred.sh</a>
 <div class=paginator>
 <ul class="pagination pagination-default">
 <li class="page-item disabled">
-<a href=# aria-disabled=true aria-label=First class=page-link role=button tabindex=-1><span aria-hidden=true>&#171;&#171;</span></a>
+<a aria-disabled=true aria-label=First class=page-link role=button tabindex=-1><span aria-hidden=true>&#171;&#171;</span></a>
 </li>
 <li class="page-item disabled">
-<a href=# aria-disabled=true aria-label=Previous class=page-link role=button tabindex=-1><span aria-hidden=true>&#171;</span></a>
+<a aria-disabled=true aria-label=Previous class=page-link role=button tabindex=-1><span aria-hidden=true>&#171;</span></a>
 </li>
 <li class="page-item active">
-<a href=# aria-current=page aria-label="Page 1" class=page-link role=button>1</a>
+<a aria-current=page aria-label="Page 1" class=page-link role=button>1</a>
 </li>
 <li class=page-item>
 <a href=/notes/page/2/ aria-label="Page 2" class=page-link role=button>2</a>
