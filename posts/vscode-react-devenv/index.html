@@ -1,0 +1,287 @@
+<!doctype html><html>
+<head>
+<title>React DevEnv with VSCode in 5 minutes</title>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="ie=edge">
+<link rel=stylesheet href=/css/bootstrap.min.css>
+<link rel=stylesheet href=/css/layouts/main.css>
+<link rel=stylesheet href=/css/navigators/navbar.css>
+<link rel=stylesheet href=/css/plyr.css>
+<link rel=stylesheet href=/css/flag-icon.min.css>
+<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel=stylesheet>
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css>
+<script>function deleteCookies(){for(var c=document.cookie.split(";"),a=0,b,d,e;a<c.length;a++)b=c[a],d=b.indexOf("="),e=d>-1?b.substr(0,d):b,document.cookie=e+"=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;domain=",document.cookie=e+"=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;domain="+location.hostname.replace(/^www\./i,"")}function disableCookies(){deleteCookies(),document.__defineGetter__?(document.__defineGetter__("cookie",function(){return''}),document.__defineSetter__("cookie",function(){return!0})):Object.defineProperty(document,'cookie',{get:function(){return''},set:function(){return!0}})}function isCookieApproved(){return localStorage.getItem("cookieBannerApproved")==='true'}isCookieApproved()||(deleteCookies(),disableCookies()),window.isCookieApproved=isCookieApproved,window.disableCookies=disableCookies,window.deleteCookies=deleteCookies</script>
+<meta property="og:title" content="React DevEnv with VSCode in 5 minutes">
+<meta property="og:description" content="Photo by Kevin Ku on Unsplash Our target setup & why Have you ever worked on multiple projects where language or version differ from one another? If the answer is yes, you probably have been playing around with tools like nvm or asdf or <input here whatever other language version manager> and have your system cluttered with a bunch that you may not even use anymore.
+In this post, I am trying out vscode devcontainers as a potential solution for a better dev environment.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://fredsh.github.io/posts/vscode-react-devenv/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-12-21T20:27:39+01:00">
+<meta property="article:modified_time" content="2021-12-21T20:27:39+01:00">
+<meta name=description content="React DevEnv with VSCode in 5 minutes">
+<link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/atom-one-dark.min.css>
+<link rel=stylesheet href=/css/layouts/single.css>
+<link rel=stylesheet href=/css/navigators/sidebar.css>
+<link rel=stylesheet href=/css/style.css>
+<link rel=stylesheet href=/my_css/cookie.css>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9Y2D259RCR"></script>
+<script>var dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-9Y2D259RCR',{anonymize_ip:!1})}</script>
+</head>
+<body data-spy=scroll data-target=#TableOfContents data-offset=80>
+<div class="container-fluid bg-dimmed wrapper">
+<nav class="navbar navbar-expand-xl top-navbar final-navbar shadow">
+<div class=container>
+<button class="navbar-toggler navbar-light" id=sidebar-toggler type=button onclick=toggleSidebar()>
+<span class=navbar-toggler-icon></span>
+</button>
+<a class=navbar-brand href=/>
+fred.sh</a>
+<button class="navbar-toggler navbar-light" id=toc-toggler type=button onclick=toggleTOC()>
+<span class=navbar-toggler-icon></span>
+</button>
+<div class="collapse navbar-collapse lang-selector" id=top-nav-items>
+<ul class="navbar-nav ml-auto">
+</ul>
+</div>
+</div>
+</nav>
+<section class=sidebar-section id=sidebar-section>
+<div class=sidebar-holder>
+<div class=sidebar id=sidebar>
+<form class=mx-auto method=get action=/search>
+<input type=text name=keyword placeholder=Search data-search id=search-box>
+</form>
+<div class=sidebar-tree>
+<ul class=tree id=tree>
+<li id=list-heading><a href=/posts data-filter=all>Posts</a></li>
+<div class=subtree>
+<li><a href=/posts/starting-tech-blog/ title=Welcome>Welcome</a></li>
+<li><a href=/posts/safely-manage-cookie-consent/ title="How to cookie consent?">How to cookie consent?</a></li>
+<li><a class=active href=/posts/vscode-react-devenv/ title="VSCode React DevEnv">VSCode React DevEnv</a></li>
+</div>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class=content-section id=content-section>
+<div class=content>
+<div class="container p-0 read-area">
+<div class="hero-area col-sm-12" id=hero-area style=background-image:url(https://fredsh.github.io/posts/vscode-react-devenv/hero.jpg)>
+</div>
+<div class=page-content>
+<div class="author-profile ml-auto align-self-lg-center">
+<img class=rounded-circle src=/images/author_hu84b195acb6257faede2a02bd6fb0aa49_488103_120x120_fit_box_3.png alt="Author Image">
+<h5 class=author-name>Frederic Colin</h5>
+<p>December 21, 2021</p>
+</div>
+<div class=title>
+<h1>React DevEnv with VSCode in 5 minutes</h1>
+</div>
+<div class=post-content id=post-content>
+<p class=photo-credit>
+Photo by <a target=_blank rel=noopener href="https://unsplash.com/@ikukevk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kevin Ku</a> on <a target=_blank rel=noopener href="https://unsplash.com/s/photos/coding?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+</p>
+<h2 id=our-target-setup--why>Our target setup & why</h2>
+<p>Have you ever worked on multiple projects where language or version differ from one another? If the answer is yes, you probably have been playing around with tools like <code>nvm</code> or <code>asdf</code> or <code>&lt;input here whatever other language version manager></code> and have your system cluttered with a bunch that you may not even use anymore.</p>
+<p>In this post, I am trying out vscode <code>devcontainers</code> as a potential solution for a better dev environment. So let&rsquo;s check what are our goals today:</p>
+<ul>
+<li><input disabled type=checkbox> No install of nodejs/react on host</li>
+<li><input disabled type=checkbox> No need for nvm/asdf &mldr;</li>
+<li><input disabled type=checkbox> Easy setup sharing with other team member</li>
+</ul>
+<h2 id=prerequisites>Prerequisites</h2>
+<p>To follow along with this post, make sure to have the following tools installed on your system.</p>
+<ul>
+<li><a href=https://www.docker.com/get-started target=_blank>Docker</a></li>
+<li><a href=https://code.visualstudio.com/download target=_blank>Visual Studio Code</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers" target=_blank>Remote - Containers</a> extension</li>
+</ul>
+<p>Although not absolutely necessary, a basic knowledge of Docker would be helpful to understand the concepts of containers and images.</p>
+<h2 id=devcontainer-setup-for-react-and-typescript>Devcontainer setup for React and typescript</h2>
+<p>The extension <code>Remote - Containers</code> comes with a bunch of base images for setting up a development environment. I will be using one of the Node.js base image, as I want to use React.</p>
+<p>Let&rsquo;s scaffold the configuration files for your first <code>devcontainer</code>:
+<img src=01_cmdAddDevContainerFile.png>
+</p>
+<ol>
+<li>Open command palette (⇧⌘P)</li>
+<li>Select <code>Remote-Containers: Add Development Container configuration files</code></li>
+<li>Select option <code>Node.js & TypeScript</code></li>
+<li>Choose the version of Node.js, <code>16-bullseye</code> in my case</li>
+<li><em>(optional)</em> Add extra features needed/wanted. I am adding <code>Java</code> so that I can use <code>SonarLint</code> (and no need for a Java runtime on my host machine, yeah)</li>
+</ol>
+<p>At this stage you should have a <code>.devcontainer</code> folder containing the following files:</p>
+<ul>
+<li>devcontainer.json</li>
+<li>Dockerfile</li>
+</ul>
+<p>With this, we are ready to start working inside the <code>devcontainer</code>. All that is left to do is to relaunch vscode inside of the devcontainer. To do so, open the command palette (⇧⌘P) and select <code>Remote-Containers: Open Folder in Container</code>. Note that you can also reach this command by clicking the little purple icon at the bottom left of the vscode window.</p>
+<p>Now vscode should be connected to the newly created dev container and the purple icon should have expanded and display something like <code>Dev Container: Node.js & TypeScript</code>.</p>
+<p>Opening a terminal inside vscode so will connect it directly to the underlying Docker container. Let&rsquo;s type the usual command to init a react project <code>npx create-react-app my-app --template typescript</code> (or follow the former steps to add a dev container to an existing react/node.js project).</p>
+<p>Finally, if you clone a repository having this <code>.devcontainer</code> folder and open it in vscode, a pop-up will propose to reopen vscode in the container. This is especially useful to ensure that each developer contributing to the project has the same environment.</p>
+<h2 id=bonus-1---customize-your-dev-env-container>Bonus 1 - Customize your dev env container</h2>
+<p>We just saw that the <code>.devcontainer</code> can easily be shared via a git repository. Let&rsquo;s now take it a step further and explore customization option that are available by editing the generated files <code>Dockerfile</code> and <code>devcontainer.json</code>.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-Dockerfile data-lang=Dockerfile><span style=color:#75715e># See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.209.6/containers/typescript-node/.devcontainer/base.Dockerfile</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e># [Choice] Node.js version (use -bullseye variants on local arm64/Apple Silicon): 16, 14, 12, 16-bullseye, 14-bullseye, 12-bullseye, 16-buster, 14-buster, 12-buster</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>ARG</span> VARIANT<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;16-bullseye&#34;</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#66d9ef>FROM</span><span style=color:#e6db74> mcr.microsoft.com/vscode/devcontainers/typescript-node:0-${VARIANT}</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e># [Optional] Uncomment this section to install additional OS packages.</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e># RUN apt-get update &amp;&amp; export DEBIAN_FRONTEND=noninteractive \</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e>#     &amp;&amp; apt-get -y install --no-install-recommends &lt;your-package-list-here&gt;</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e># [Optional] Uncomment if you want to install an additional version of node using nvm</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e># ARG EXTRA_NODE_VERSION=10</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e># RUN su node -c &#34;source /usr/local/share/nvm/nvm.sh &amp;&amp; nvm install ${EXTRA_NODE_VERSION}&#34;</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e># [Optional] Uncomment if you want to install more global node packages</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span><span style=color:#75715e># RUN su node -c &#34;npm install -g &lt;your-package-list -here&gt;&#34;</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010>
+</span></code></pre></div><p>The generated <code>Dockerfile</code> is really comprehensive and has a bunch of commented statement to help adding things to the base image even if you are not very familiar with Docker (though I would recommend to learn a bit about how docker works).</p>
+<p>Want a global npm packages you want to be installed (for example, create-react-app)? Then uncomment the last line and input your packages and, well that&rsquo;s it.</p>
+<p>It is also possible to add other dependencies inside the image by adding lines like <code>RUN apt-get -y install &lt;some package></code>. This would be a good place to install a Java runtime rather than using the Java option during the setup to avoid the extra stuff it may add inside the dev env but that may not be wanted. If you want full control on the Docker image and what it contains, you could even <a href=https://code.visualstudio.com/docs/remote/create-dev-container target=_blank>create your own image</a>.</p>
+<p>Now let&rsquo;s have a look at the <code>devcontainer.json</code> file. The <code>settings</code> key allows you to define default vscode settings. This is useful to provide sane defaults for your team. Note that these settings would be overridden by user local settings if they already define the same settings on their local machine. For example, if you wanted to add vertical rulers to refrain your team member from writing lines of 300 characters or more&mldr; (but who would do that if they are really sane&mldr; 😱?)</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>	<span style=color:#75715e>// Set *default* container specific settings.json values on container create.
+</span><span style=color:#75715e></span>	<span style=color:#e6db74>&#34;settings&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> {
+		<span style=color:#f92672>&#34;editor.rulers&#34;</span>: [<span style=color:#ae81ff>80</span>,<span style=color:#ae81ff>120</span>],
+		<span style=color:#f92672>&#34;workbench.colorCustomizations&#34;</span>: {
+			<span style=color:#f92672>&#34;editorRuler.foreground&#34;</span>: <span style=color:#e6db74>&#34;#ff4081&#34;</span>
+		}
+	}<span style=color:#960050;background-color:#1e0010>,</span>
+</code></pre></div><p>The other key I want to mention here is <code>extensions</code>. It enables installing default extensions on the devcontainer. This way, you can make sure nobody in your team will ever forget about fixing eslint errors for example since they will have the extension installed 😈. Remember that I wanted Java in my base image earlier? Well, this is where it becomes interesting. I can now add the <code>SonarLint</code> extension on the container and I absolutely do not need to have a JRE/JDK installed on my host, only inside my dev container.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>	<span style=color:#75715e>// Add the IDs of extensions you want installed when the container is created.
+</span><span style=color:#75715e></span>	<span style=color:#e6db74>&#34;extensions&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> [
+		<span style=color:#e6db74>&#34;dbaeumer.vscode-eslint&#34;</span>,
+		<span style=color:#e6db74>&#34;sonarsource.sonarlint-vscode&#34;</span>
+	]<span style=color:#960050;background-color:#1e0010>,</span>
+</code></pre></div><h2 id=bonus-2---enable-debugging-with-chrome>Bonus 2 - Enable debugging with Chrome</h2>
+<p>It would be a shame having such a nice development environment and being unable to debug your application, right? Good news for us, debugging works seamlessly and I was able to run the React app, launch the debug session and hit my breakpoints without any problem.</p>
+<p>The sample <code>launch.json</code> file below should be copied inside the folder <code>.vscode</code> in the workspace root.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+    <span style=color:#75715e>// Use IntelliSense to learn about possible attributes.
+</span><span style=color:#75715e></span>    <span style=color:#75715e>// Hover to view descriptions of existing attributes.
+</span><span style=color:#75715e></span>    <span style=color:#75715e>// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+</span><span style=color:#75715e></span>    <span style=color:#f92672>&#34;version&#34;</span>: <span style=color:#e6db74>&#34;0.2.0&#34;</span>,
+    <span style=color:#f92672>&#34;configurations&#34;</span>: [
+        {
+            <span style=color:#f92672>&#34;type&#34;</span>: <span style=color:#e6db74>&#34;pwa-chrome&#34;</span>,
+            <span style=color:#f92672>&#34;request&#34;</span>: <span style=color:#e6db74>&#34;launch&#34;</span>,
+            <span style=color:#f92672>&#34;name&#34;</span>: <span style=color:#e6db74>&#34;Launch Chrome against localhost&#34;</span>,
+            <span style=color:#f92672>&#34;url&#34;</span>: <span style=color:#e6db74>&#34;http://localhost:3000&#34;</span>,
+            <span style=color:#f92672>&#34;webRoot&#34;</span>: <span style=color:#e6db74>&#34;${workspaceFolder}&#34;</span>
+        }
+    ]
+}
+</code></pre></div><p>Now, after launching the app with <code>npm start</code> from the terminal inside the <code>devcontainer</code>, you can launch the debug and it just works.</p>
+<h2 id=closing-notes>Closing notes</h2>
+<p><code>Devcontainers</code> are a very powerful addition to vscode. We have seen here some of the possibilities offered but there is much more to explore. If you find it useful and want to dig more, check out <a href=https://code.visualstudio.com/docs/remote/containers target=_blank>this article</a> from the official docs.</p>
+<p>For large projects or with many contributors, I would recommend preparing a fine tuned base image that suits the team needs but it is perfectly fine to use one of the base image available to get started. Also, I have not covered here the possibilities offered with <code>docker-compose</code>, which can be used to have a database container running alongside the devcontainer.</p>
+<p>Thank you for reading, I hope that the devcontainers will be useful to you. Please leave a comment to share your opinion or if you have a question.</p>
+</div>
+<hr>
+<div class="row next-prev-navigator">
+<div class="col-md-6 previous-article">
+<a href=/posts/safely-manage-cookie-consent/ title="How to safely manage cookie consent?" class="btn btn-outline-info">
+<div><i class="fas fa-chevron-circle-left"></i> Prev</div>
+<div class=next-prev-text>How to safely manage cookie consent?</div>
+</a>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+<a id=scroll-to-top class=btn><i class="fas fa-chevron-circle-up"></i></a>
+</section>
+<section class=toc-section id=toc-section>
+<div class=toc-holder>
+<h5 class="text-center pl-3">Table of Contents</h5>
+<hr>
+<div class=toc>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#our-target-setup--why>Our target setup & why</a></li>
+<li><a href=#prerequisites>Prerequisites</a></li>
+<li><a href=#devcontainer-setup-for-react-and-typescript>Devcontainer setup for React and typescript</a></li>
+<li><a href=#bonus-1---customize-your-dev-env-container>Bonus 1 - Customize your dev env container</a></li>
+<li><a href=#bonus-2---enable-debugging-with-chrome>Bonus 2 - Enable debugging with Chrome</a></li>
+<li><a href=#closing-notes>Closing notes</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</section>
+</div>
+<div class=cookie-container>
+<div class=cookie-anchor>^</div>
+<p class=cookie-notice>
+My site uses cookies to improve your experience. To find out more, read my
+<a href=/privacy-statement/>privacy statement</a> and <a href=/cookie-policy/>cookie policy</a>.
+</p>
+<button class=cookie-btn-ok>
+Got it
+</button>
+<button class=cookie-btn-no>
+No cookies please
+</button>
+</div>
+<script src=/my_js/cookieNotice.js></script>
+<footer class="container-fluid text-center align-content-center footer pb-2">
+<div class="container pt-5">
+<div class="row text-left">
+<div class="col-md-4 col-sm-12">
+<h5>Navigation</h5>
+<ul>
+<li class=nav-item>
+<a class=smooth-scroll href=/#about>About</a>
+</li>
+<li class=nav-item>
+<a class=smooth-scroll href=/#skills>Skills</a>
+</li>
+<li class=nav-item>
+<a href=/privacy-statement>Privacy statement</a>
+</li>
+<li class=nav-item>
+<a href=/cookie-policy>Cookie policy</a>
+</li>
+</ul>
+</div>
+<div class="col-md-4 col-sm-12">
+<h5>Contact me:</h5>
+<ul>
+<li><span>Email: </span> <span>fred.colind@gmail.com</span></li>
+</ul>
+</div>
+</div>
+</div>
+<hr>
+<div class=container>
+<div class="row text-left">
+<div class=col-md-4>
+<a id=theme href=https://github.com/hossainemruz/toha target=_blank rel=noopener>
+<img src=/images/theme-logo_hu8376fd15465fef26ffe66b6bcf0ca686_13669_32x0_resize_box_3.png alt="Toha Theme Logo">
+Toha
+</a>
+</div>
+<div class="col-md-4 text-center">© 2021 Copyright.</div>
+<div class="col-md-4 text-right">
+<a id=hugo href=https://gohugo.io/ target=_blank rel=noopener>Powered by
+<img src=/images/hugo-logo.svg alt="Hugo Logo" height=18>
+</a>
+</div>
+</div>
+</div>
+</footer>
+<script type=text/javascript src=/js/jquery-3.4.1.min.js></script>
+<script type=text/javascript src=/js/popper.min.js></script>
+<script type=text/javascript src=/js/bootstrap.min.js></script>
+<script type=text/javascript src=/js/navbar.js></script>
+<script type=text/javascript src=/js/plyr.js></script>
+<script type=text/javascript src=/js/main.js></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js></script>
+<script src=/js/single.js></script>
+<script>hljs.initHighlightingOnLoad()</script>
+</body>
+</html>
